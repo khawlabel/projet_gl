@@ -1,0 +1,81 @@
+
+
+
+
+  <form>
+   {status==='error' && <p class="text-success">error publication  </p>}
+   <div className="form-group">
+     <label htmlFor="theme">theme</label>
+     <input type="text" onChange={e=>
+    settheme(e.target.value)} name="theme" className="form-control"  id="theme"  placeholder="Enter theme"
+       />
+   </div>
+    <div></div>
+     <div></div>
+   <div className="form-group">
+     <label htmlFor="description">Description</label>
+     <textarea onChange={e=>
+    setdescription(e.target.value)} name="description" className="form-control" id="description"  rows="3"></textarea>
+   </div>
+   <div></div>
+     <div></div>
+   <div className="form-group">
+     <label htmlFor="category">Category</label>
+     <select  onChange={e=>
+    setcategory(e.target.value)} name="category" className="form-control" id="category"   >
+                          
+                            {categorys.map((element,index) => 
+                                 {return  <option key={index} value={element.id} >{element.name}</option>})} 
+                            
+     </select>
+     <div></div>
+     <div></div>
+   <div className="form-group">
+     <label htmlFor="tarif">tarif</label>
+     <input type="text" onChange={e=>
+    settarif(e.target.value)} name="tarif" className="form-control" id="tarif"  placeholder="Enter tarif"
+       />
+   </div>
+
+ 
+   <div className="form-group">
+     <label htmlFor="modalite" >Modalite</label>
+     <select onChange={e=>
+    setmodalite(e.target.value)} name="modalite" className="form-control"  id="modalite"  >
+      {modalites.map((element,index)=> 
+            {return <option  key={index}  value={element.id}>{element.type}</option>
+       
+      })} 
+
+     </select>
+     
+     </div>
+     <div></div>
+     <div></div>
+   </div>
+   <div className="form-group">
+     <label htmlFor="commune">commune</label>
+     <input  type="text" onChange={e=>
+    setcommune(e.target.value)}  className="form-control" id="commune"  placeholder="Enter commune" />
+   </div>
+   <div className="form-group">
+     <label htmlFor="adresse">adresse</label>
+     <input  type="text" onChange={e=>
+    setadresse(e.target.value)} name="adresse"    className="form-control" id="adresse" placeholder="Enter adresse" />
+   </div>
+   <div></div>
+     <div></div>
+     <div className="form-group">
+     <label htmlFor="wilaya">wilaya</label>
+     <input type="text" onChange={e=>
+    setwilaya(e.target.value)} name="wilaya" className="form-control"  id="wilaya"  placeholder="Enter wilaya"
+       />
+   </div>
+   <div className="form-group">
+     <label htmlFor="photo">photo</label>
+     <input type="file" onChange={e=>
+    setphoto(e.target.value)} name="photo" className="form-control"  id="photo"  placeholder="inserer la photo"
+       />
+   </div>
+   <button type="submit" className="btn btn-primary" onClick={handelForm}>Submit</button>
+ </form>
